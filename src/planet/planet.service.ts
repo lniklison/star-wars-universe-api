@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreatePlanetDto } from './dto/create-planet.dto';
 import { UpdatePlanetDto } from './dto/update-planet.dto';
 import { Planet } from './entities/planet.entity';
@@ -14,23 +14,37 @@ export class PlanetService {
   ) {}
 
 
-  create(createPlanetDto: CreatePlanetDto) {
-    return 'This action adds a new planet';
+  async create(createPlanetDto: CreatePlanetDto): Promise<Planet> {
+    return await this.planetRepository.save(createPlanetDto);
   }
 
-  findAll() {
-    return `This action returns all planet`;
+  async findAll(): Promise<Planet[]> {
+    return await this.planetRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} planet`;
+  async findOne(id: number): Promise<Planet> {
+    const planet = await this.planetRepository.findOne({ where: { id: id } });
+    if (!planet) {
+      throw new NotFoundException(`Planet with ID ${id} not found`);
+    }
+    return planet;
   }
 
-  update(id: number, updatePlanetDto: UpdatePlanetDto) {
-    return `This action updates a #${id} planet`;
+  async update(id: number, updatePlanetDto: UpdatePlanetDto): Promise<Planet> {
+    const planet = await this.planetRepository.preload({
+      id: id,
+      ...updatePlanetDto,
+    });
+    if (!planet) {
+      throw new NotFoundException(`Planet with ID ${id} not found`);
+    }
+    return await this.planetRepository.save(planet);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} planet`;
+  async remove(id: number): Promise<void> {
+    const deleteResult = await this.planetRepository.delete(id);
+    if (deleteResult.affected === 0) {
+      throw new NotFoundException(`Planet with ID ${id} not found`);
+    }
   }
 }

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  star-wars-app:
+    container_name: star-wars-app
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_HOST: db
+
+  db:
+    image: mysql:8.0
+    container_name: star-wars-db
+    environment:
+      MYSQL_DATABASE: starWars
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - star-wars-db-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+
+volumes:
+  star-wars-db-data:

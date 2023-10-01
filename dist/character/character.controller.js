@@ -21,20 +21,44 @@ let CharacterController = class CharacterController {
     constructor(characterService) {
         this.characterService = characterService;
     }
-    create(createCharacterDto) {
-        return this.characterService.create(createCharacterDto);
+    async create(createCharacterDto) {
+        return await this.characterService.create(createCharacterDto);
     }
-    findAll() {
-        return this.characterService.findAll();
+    async findAll() {
+        return await this.characterService.findAll();
     }
-    findOne(id) {
-        return this.characterService.findOne(+id);
+    async findOne(id) {
+        return await this.characterService.findOne(+id);
     }
-    update(id, updateCharacterDto) {
-        return this.characterService.update(+id, updateCharacterDto);
+    async update(id, updateCharacterDto) {
+        return await this.characterService.update(+id, updateCharacterDto);
     }
-    remove(id) {
-        return this.characterService.remove(+id);
+    async remove(id) {
+        return await this.characterService.remove(+id);
+    }
+    async relocate(id, relocateDto) {
+        try {
+            return await this.characterService.relocateCharacter(+id, +relocateDto.planetId);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
+    async boardShip(id, shipId) {
+        try {
+            return await this.characterService.boardStarship(+id, shipId);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
+    async disembarkShip(id) {
+        try {
+            return await this.characterService.disembarkStarship(+id);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
     }
 };
 __decorate([
@@ -42,20 +66,20 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_character_dto_1.CreateCharacterDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Patch)(':id'),
@@ -63,15 +87,38 @@ __decorate([
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_character_dto_1.UpdateCharacterDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], CharacterController.prototype, "remove", null);
+__decorate([
+    (0, common_1.Put)(':id/planet'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], CharacterController.prototype, "relocate", null);
+__decorate([
+    (0, common_1.Put)(':id/board'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:returntype", Promise)
+], CharacterController.prototype, "boardShip", null);
+__decorate([
+    (0, common_1.Put)(':id/disembark'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], CharacterController.prototype, "disembarkShip", null);
 CharacterController = __decorate([
     (0, common_1.Controller)('character'),
     __metadata("design:paramtypes", [character_service_1.CharacterService])

@@ -21,20 +21,31 @@ let PlanetService = class PlanetService {
     constructor(planetRepository) {
         this.planetRepository = planetRepository;
     }
-    create(createPlanetDto) {
-        return 'This action adds a new planet';
+    async create(createPlanetDto) {
+        return await this.planetRepository.save(createPlanetDto);
     }
-    findAll() {
-        return `This action returns all planet`;
+    async findAll() {
+        return await this.planetRepository.find();
     }
-    findOne(id) {
-        return `This action returns a #${id} planet`;
+    async findOne(id) {
+        const planet = await this.planetRepository.findOne({ where: { id: id } });
+        if (!planet) {
+            throw new common_1.NotFoundException(`Planet with ID ${id} not found`);
+        }
+        return planet;
     }
-    update(id, updatePlanetDto) {
-        return `This action updates a #${id} planet`;
+    async update(id, updatePlanetDto) {
+        const planet = await this.planetRepository.preload(Object.assign({ id: id }, updatePlanetDto));
+        if (!planet) {
+            throw new common_1.NotFoundException(`Planet with ID ${id} not found`);
+        }
+        return await this.planetRepository.save(planet);
     }
-    remove(id) {
-        return `This action removes a #${id} planet`;
+    async remove(id) {
+        const deleteResult = await this.planetRepository.delete(id);
+        if (deleteResult.affected === 0) {
+            throw new common_1.NotFoundException(`Planet with ID ${id} not found`);
+        }
     }
 };
 PlanetService = __decorate([

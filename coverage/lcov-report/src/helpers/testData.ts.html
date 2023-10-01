@@ -1,0 +1,313 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/helpers/testData.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/helpers</a> testData.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input oninput="onInput()" type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const starshipsTestData = [
+    { id: 1, name: "Millennium Falcon", model: "YT-1300", cargoCapacity: 100000, currentLocation: { latitude: 10, longitude: 20 }, passengers: [], enemies: [], autonomy: 1001 },
+    { id: 2, name: "Star Destroyer", model: "Imperial I-class", cargoCapacity: 5000000, currentLocation: { latitude: 15, longitude: 30 }, passengers: [], enemies: [], autonomy: 1002 },
+    { id: 3, name: "Slave 1", model: "Firespray-31", cargoCapacity: 70000, currentLocation: { latitude: 20, longitude: 40 }, passengers: [], enemies: [], autonomy: 1003 },
+    { id: 4, name: "X-wing", model: "T-65B", cargoCapacity: 12000, currentLocation: { latitude: 25, longitude: 50 }, passengers: [], enemies: [], autonomy: 1004 },
+    { id: 5, name: "TIE Fighter", model: "TIE/ln", cargoCapacity: 8500, currentLocation: { latitude: 30, longitude: 60 }, passengers: [], enemies: [], autonomy: 1005 },
+    { id: 6, name: "Death Star", model: "DS-1 Orbital Battle Station", cargoCapacity: 1000000000, currentLocation: { latitude: 35, longitude: 70 }, passengers: [], enemies: [], autonomy: 1006 },
+    { id: 7, name: "Starfreighter", model: "VCX-100", cargoCapacity: 150000, currentLocation: { latitude: 40, longitude: 80 }, passengers: [], enemies: [], autonomy: 1007 },
+    { id: 8, name: "Interceptor", model: "TIE/IN", cargoCapacity: 9500, currentLocation: { latitude: 45, longitude: 90 }, passengers: [], enemies: [], autonomy: 1008 },
+    { id: 9, name: "Executor", model: "Executor-class", cargoCapacity: 6500000, currentLocation: { latitude: 50, longitude: 100 }, passengers: [], enemies: [], autonomy: 1009 },
+    { id: 10, name: "Ghost", model: "VCX-100 light freighter", cargoCapacity: 160000, currentLocation: { latitude: 55, longitude: 110 }, passengers: [], enemies: [], autonomy: 1010 },
+    { id: 11, name: "Venator-class Star Destroyer", model: "Venator-class", cargoCapacity: 8000000, currentLocation: { latitude: 60, longitude: 120 }, passengers: [], enemies: [], autonomy: 1011 },
+    { id: 12, name: "Nebulon-B Frigate", model: "EF76 Nebulon-B", cargoCapacity: 600000, currentLocation: { latitude: 65, longitude: 130 }, passengers: [], enemies: [], autonomy: 1012 },
+    { id: 13, name: "Imperial Shuttle", model: "Lambda-class", cargoCapacity: 80000, currentLocation: { latitude: 70, longitude: 140 }, passengers: [], enemies: [], autonomy: 1013 },
+    { id: 14, name: "B-wing Fighter", model: "A/SF-01", cargoCapacity: 45000, currentLocation: { latitude: 75, longitude: 150 }, passengers: [], enemies: [], autonomy: 1014 },
+    { id: 15, name: "Y-wing Starfighter", model: "BTL-A4", cargoCapacity: 20000, currentLocation: { latitude: 80, longitude: 160 }, passengers: [], enemies: [], autonomy: 1015 },
+    { id: 16, name: "U-wing Fighter", model: "UT-60D", cargoCapacity: 25000, currentLocation: { latitude: 82, longitude: 165 }, passengers: [], enemies: [], autonomy: 1016 },
+    { id: 17, name: "A-wing Fighter", model: "RZ-1", cargoCapacity: 17500, currentLocation: { latitude: 84, longitude: 170 }, passengers: [], enemies: [], autonomy: 1017 },
+    { id: 18, name: "MC80 Star Cruiser", model: "MC80 Liberty type", cargoCapacity: 750000, currentLocation: { latitude: 86, longitude: 175 }, passengers: [], enemies: [], autonomy: 1018 },
+    { id: 19, name: "Dreadnought-class Heavy Cruiser", model: "Dreadnought-class", cargoCapacity: 2200000, currentLocation: { latitude: 88, longitude: 180 }, passengers: [], enemies: [], autonomy: 1019 },
+];
+&nbsp;
+export const planetsTestData = [
+    { id: 1, name: "Tatooine", population: 200000, climate: 'Arid', terrain: 'Desert', coordinates: { latitude: 10, longitude: 10 } },
+    { id: 2, name: "Endor", population: 30000, climate: 'Temperate', terrain: 'Forests', coordinates: { latitude: 15, longitude: 15 } },
+    { id: 3, name: "Hoth", population: 1000, climate: 'Frozen', terrain: 'Tundra, Ice caves', coordinates: { latitude: 20, longitude: 20 } },
+    { id: 4, name: "Naboo", population: 4500000, climate: 'Temperate', terrain: 'Lakes, Plains, Swamps', coordinates: { latitude: 25, longitude: 25 } },
+    { id: 5, name: "Dagobah", population: 100, climate: 'Swampy', terrain: 'Swamps, Jungles', coordinates: { latitude: 30, longitude: 30 } },
+    { id: 6, name: "Coruscant", population: 1000000000, climate: 'Temperate', terrain: 'Cityscape', coordinates: { latitude: 35, longitude: 35 } },
+    { id: 7, name: "Alderaan", population: 2000000, climate: 'Temperate', terrain: 'Grasslands, Mountains', coordinates: { latitude: 40, longitude: 40 } },
+    { id: 8, name: "Bespin", population: 6000, climate: 'Gas giant', terrain: 'Gas Giant', coordinates: { latitude: 45, longitude: 45 } },
+    { id: 9, name: "Kamino", population: 1000000, climate: 'Temperate', terrain: 'Ocean', coordinates: { latitude: 50, longitude: 50 } },
+    { id: 10, name: "Yavin IV", population: 1000, climate: 'Tropical', terrain: 'Jungles, Rainforests', coordinates: { latitude: 55, longitude: 55 } },
+    { id: 11, name: "Sullust", population: 18500000, climate: 'Superheated', terrain: 'Rocky canyons, Volcanoes', coordinates: { latitude: 60, longitude: 60 } },
+    { id: 12, name: "Geonosis", population: 100000000, climate: 'Arid', terrain: 'Rock, Desert', coordinates: { latitude: 65, longitude: 65 } },
+    { id: 13, name: "Mustafar", population: 20000, climate: 'Hot', terrain: 'Volcanoes, Lava rivers', coordinates: { latitude: 70, longitude: 70 } },
+    { id: 14, name: "Jakku", population: 500000, climate: 'Desert', terrain: 'Deserts', coordinates: { latitude: 75, longitude: 75 } },
+    { id: 15, name: "Starkiller Base", population: 10000, climate: 'Frozen', terrain: 'Tundra, Ice caves', coordinates: { latitude: 80, longitude: 80 } }
+];
+&nbsp;
+export const charactersTestData = [
+    {id: 1,name: "Luke Skywalker",species: "Human",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Rebel Alliance", "Jedi Order"]},
+    {id: 2,name: "Darth Vader",species: "Human",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Sith", "Galactic Empire"]},
+    {id: 3,name: "Leia Organa",species: "Human",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Rebel Alliance", "New Republic"]},
+    {id: 4,name: "Han Solo",species: "Human",sensitivityToTheForce: false,currentLocation: null, starship: null,affiliations: ["Rebel Alliance"]},
+    {id: 5,name: "Chewbacca",species: "Wookiee",sensitivityToTheForce: false,currentLocation: null, starship: null,affiliations: ["Rebel Alliance"]},
+    {id: 6,name: "Obi-Wan Kenobi",species: "Human",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Jedi Order"]},
+    {id: 7,name: "Yoda",species: "Unknown",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Jedi Order"]},
+    {id: 8,name: "R2-D2",species: "Droid",sensitivityToTheForce: false,currentLocation: null, starship: null,affiliations: ["Rebel Alliance"]},
+    {id: 9,name: "C-3PO",species: "Droid",sensitivityToTheForce: false,currentLocation: null, starship: null,affiliations: ["Rebel Alliance"]},
+    {id: 10,name: "Mace Windu",species: "Human",sensitivityToTheForce: true,currentLocation: null, starship: null,affiliations: ["Jedi Order"]}
+];
+&nbsp;
+&nbsp;
+export const characterDtosTestData = [
+    { name: "Luke Skywalker", species: "Human", sensitivityToTheForce: true },
+    { name: "Darth Vader", species: "Human", sensitivityToTheForce: true },
+    { name: "Leia Organa", species: "Human", sensitivityToTheForce: true },
+    { name: "Han Solo", species: "Human", sensitivityToTheForce: false },
+    { name: "Chewbacca", species: "Wookiee", sensitivityToTheForce: false }
+];
+&nbsp;
+export const planetDtosTestData = [
+    { name: 'Tatooine', population: 200000, climate: 'Arid', terrain: 'Desert', coordinates: { latitude: 35.6895, longitude: 139.6917 } },
+    { name: 'Hoth', population: 1000, climate: 'Frozen', terrain: 'Tundra, Ice caves', coordinates: { latitude: 64.2008, longitude: 149.4937 } },
+    { name: 'Endor', population: 30000, climate: 'Temperate', terrain: 'Forests', coordinates: { latitude: 37.7749, longitude: 122.4194 } },
+    { name: 'Coruscant', population: 1000000000, climate: 'Temperate', terrain: 'Cityscape', coordinates: { latitude: 40.7128, longitude: 74.0060 } },
+    { name: 'Naboo', population: 4500000, climate: 'Temperate', terrain: 'Lakes, Plains, Swamps', coordinates: { latitude: 41.9028, longitude: 12.4964 } }
+];
+&nbsp;
+export const starshipDtosTestData = [
+    { name: 'Millennium Falcon', model: 'YT-1300', cargoCapacity: 100000, currentLocation: { latitude: 35.6895, longitude: 139.6917 }, passengers: [], enemies: [] },
+    { name: 'Star Destroyer', model: 'Imperial I-class', cargoCapacity: 36000000, currentLocation: { latitude: 40.7128, longitude: 74.0060 }, passengers: [], enemies: [] },
+    { name: 'Death Star', model: 'DS-1 Orbital Battle Station', cargoCapacity: 1000000000, currentLocation: { latitude: 37.7749, longitude: 122.4194 }, passengers: [], enemies: [] },
+    { name: 'Ship 1', model: 'Firespray-31-class patrol and attack craft', cargoCapacity: 70000, currentLocation: { latitude: 41.9028, longitude: 12.4964 }, passengers: [], enemies: [] },
+    { name: 'X-Wing', model: 'T-65B', cargoCapacity: 100, currentLocation: { latitude: 64.2008, longitude: 149.4937 }, passengers: [], enemies: [] }
+];</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2023-10-02T09:31:46.232Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

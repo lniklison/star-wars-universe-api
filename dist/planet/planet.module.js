@@ -18,7 +18,8 @@ PlanetModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([planet_entity_1.Planet])],
         controllers: [planet_controller_1.PlanetController],
-        providers: [planet_service_1.PlanetService]
+        providers: [planet_service_1.PlanetService],
+        exports: [planet_service_1.PlanetService]
     })
 ], PlanetModule);
 exports.PlanetModule = PlanetModule;

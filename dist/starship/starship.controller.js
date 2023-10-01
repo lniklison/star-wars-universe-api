@@ -21,20 +21,52 @@ let StarshipController = class StarshipController {
     constructor(starshipService) {
         this.starshipService = starshipService;
     }
-    create(createStarshipDto) {
-        return this.starshipService.create(createStarshipDto);
+    async create(createStarshipDto) {
+        return await this.starshipService.create(createStarshipDto);
     }
-    findAll() {
-        return this.starshipService.findAll();
+    async findAll() {
+        return await this.starshipService.findAll();
     }
-    findOne(id) {
-        return this.starshipService.findOne(+id);
+    async findOne(id) {
+        return await this.starshipService.findOne(+id);
     }
-    update(id, updateStarshipDto) {
-        return this.starshipService.update(+id, updateStarshipDto);
+    async update(id, updateStarshipDto) {
+        return await this.starshipService.update(+id, updateStarshipDto);
     }
-    remove(id) {
-        return this.starshipService.remove(+id);
+    async remove(id) {
+        return await this.starshipService.remove(+id);
+    }
+    async calculateDistance(id, planetId) {
+        try {
+            return await this.starshipService.calculateDistance(+id, +planetId);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
+    async getNearbyEnemies(id, range) {
+        try {
+            return await this.starshipService.getNearbyEnemies(+id, +range);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
+    async generateRandomEnemy(id) {
+        try {
+            return await this.starshipService.spawnEnemyStarship(+id);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
+    }
+    async getReachablePlanets(id) {
+        try {
+            return await this.starshipService.getReachablePlanets(+id);
+        }
+        catch (error) {
+            throw new common_1.HttpException(error.message, common_1.HttpStatus.BAD_REQUEST);
+        }
     }
 };
 __decorate([
@@ -42,20 +74,20 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_starship_dto_1.CreateStarshipDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], StarshipController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], StarshipController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], StarshipController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Patch)(':id'),
@@ -63,15 +95,45 @@ __decorate([
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_starship_dto_1.UpdateStarshipDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], StarshipController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], StarshipController.prototype, "remove", null);
+__decorate([
+    (0, common_1.Get)(':id/distance/:planetId'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)('planetId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], StarshipController.prototype, "calculateDistance", null);
+__decorate([
+    (0, common_1.Get)(':id/enemies/:range'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)('range')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], StarshipController.prototype, "getNearbyEnemies", null);
+__decorate([
+    (0, common_1.Post)(':id/generateEnemy'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], StarshipController.prototype, "generateRandomEnemy", null);
+__decorate([
+    (0, common_1.Get)(':id/reachablePlanets'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], StarshipController.prototype, "getReachablePlanets", null);
 StarshipController = __decorate([
     (0, common_1.Controller)('starship'),
     __metadata("design:paramtypes", [starship_service_1.StarshipService])

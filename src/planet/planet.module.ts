@@ -7,6 +7,7 @@ import { Planet } from './entities/planet.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Planet])],
   controllers: [PlanetController],
-  providers: [PlanetService]
+  providers: [PlanetService],
+  exports: [PlanetService]
 })
 export class PlanetModule {}

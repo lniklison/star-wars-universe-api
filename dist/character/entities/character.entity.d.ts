@@ -1,4 +1,4 @@
-import { Starship } from 'src/starship/entities/starship.entity';
+import { Starship } from '../../starship/entities/starship.entity';
 import { Planet } from '../../planet/entities/planet.entity';
 export declare class Character {
     id: number;

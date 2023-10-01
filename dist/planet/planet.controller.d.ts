@@ -4,9 +4,9 @@ import { UpdatePlanetDto } from './dto/update-planet.dto';
 export declare class PlanetController {
     private readonly planetService;
     constructor(planetService: PlanetService);
-    create(createPlanetDto: CreatePlanetDto): string;
-    findAll(): string;
-    findOne(id: string): string;
-    update(id: string, updatePlanetDto: UpdatePlanetDto): string;
-    remove(id: string): string;
+    create(createPlanetDto: CreatePlanetDto): Promise<any>;
+    findAll(): Promise<import("./entities/planet.entity").Planet[]>;
+    findOne(id: string): Promise<import("./entities/planet.entity").Planet>;
+    update(id: string, updatePlanetDto: UpdatePlanetDto): Promise<import("./entities/planet.entity").Planet>;
+    remove(id: string): Promise<void>;
 }

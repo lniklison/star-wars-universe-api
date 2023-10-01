@@ -26,7 +26,7 @@ AppModule = __decorate([
             starship_module_1.StarshipModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'localhost',
+                host: 'star-wars-db',
                 port: 3306,
                 username: 'root',
                 password: 'password',

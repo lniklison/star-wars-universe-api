@@ -21,20 +21,20 @@ let PlanetController = class PlanetController {
     constructor(planetService) {
         this.planetService = planetService;
     }
-    create(createPlanetDto) {
-        return this.planetService.create(createPlanetDto);
+    async create(createPlanetDto) {
+        return await this.planetService.create(createPlanetDto);
     }
-    findAll() {
-        return this.planetService.findAll();
+    async findAll() {
+        return await this.planetService.findAll();
     }
-    findOne(id) {
-        return this.planetService.findOne(+id);
+    async findOne(id) {
+        return await this.planetService.findOne(+id);
     }
-    update(id, updatePlanetDto) {
-        return this.planetService.update(+id, updatePlanetDto);
+    async update(id, updatePlanetDto) {
+        return await this.planetService.update(+id, updatePlanetDto);
     }
-    remove(id) {
-        return this.planetService.remove(+id);
+    async remove(id) {
+        return await this.planetService.remove(+id);
     }
 };
 __decorate([
@@ -42,20 +42,20 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_planet_dto_1.CreatePlanetDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], PlanetController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], PlanetController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], PlanetController.prototype, "findOne", null);
 __decorate([
     (0, common_1.Patch)(':id'),
@@ -63,14 +63,14 @@ __decorate([
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_planet_dto_1.UpdatePlanetDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], PlanetController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], PlanetController.prototype, "remove", null);
 PlanetController = __decorate([
     (0, common_1.Controller)('planet'),

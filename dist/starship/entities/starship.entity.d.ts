@@ -4,6 +4,7 @@ export declare class Starship {
     name: string;
     model: string;
     cargoCapacity: number;
+    autonomy: number;
     currentLocation: {
         latitude: number;
         longitude: number;

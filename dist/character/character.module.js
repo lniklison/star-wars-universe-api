@@ -12,11 +12,13 @@ const character_service_1 = require("./character.service");
 const character_controller_1 = require("./character.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const character_entity_1 = require("./entities/character.entity");
+const planet_module_1 = require("../planet/planet.module");
+const starship_module_1 = require("../starship/starship.module");
 let CharacterModule = class CharacterModule {
 };
 CharacterModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([character_entity_1.Character])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([character_entity_1.Character]), planet_module_1.PlanetModule, starship_module_1.StarshipModule],
         controllers: [character_controller_1.CharacterController],
         providers: [character_service_1.CharacterService]
     })

@@ -38,6 +38,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Starship.prototype, "cargoCapacity", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ type: 'int' }),
+    __metadata("design:type", Number)
+], Starship.prototype, "autonomy", void 0);
+__decorate([
     (0, typeorm_1.Column)('json'),
     __metadata("design:type", Object)
 ], Starship.prototype, "currentLocation", void 0);

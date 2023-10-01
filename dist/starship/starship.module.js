@@ -12,13 +12,15 @@ const starship_service_1 = require("./starship.service");
 const starship_controller_1 = require("./starship.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const starship_entity_1 = require("./entities/starship.entity");
+const planet_module_1 = require("../planet/planet.module");
 let StarshipModule = class StarshipModule {
 };
 StarshipModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([starship_entity_1.Starship])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([starship_entity_1.Starship]), planet_module_1.PlanetModule],
         controllers: [starship_controller_1.StarshipController],
-        providers: [starship_service_1.StarshipService]
+        providers: [starship_service_1.StarshipService],
+        exports: [starship_service_1.StarshipService]
     })
 ], StarshipModule);
 exports.StarshipModule = StarshipModule;

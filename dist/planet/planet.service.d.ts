@@ -5,9 +5,9 @@ import { Repository } from 'typeorm';
 export declare class PlanetService {
     private planetRepository;
     constructor(planetRepository: Repository<Planet>);
-    create(createPlanetDto: CreatePlanetDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updatePlanetDto: UpdatePlanetDto): string;
-    remove(id: number): string;
+    create(createPlanetDto: CreatePlanetDto): Promise<Planet>;
+    findAll(): Promise<Planet[]>;
+    findOne(id: number): Promise<Planet>;
+    update(id: number, updatePlanetDto: UpdatePlanetDto): Promise<Planet>;
+    remove(id: number): Promise<void>;
 }
